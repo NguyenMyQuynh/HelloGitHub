@@ -70,3 +70,26 @@ or specific branch:
   - remote: Repository not found: 
   ``` Control Panel -> Credential Manager -> Windows credentials -> GitHub account -> Remove. ```
   - Lỗi Permission 403: kiểm tra phiên đăng nhập trên browser có đúng account tương ứng dang thao tác trên máy local không.  
+  
+**How can I push to my fork from a clone of the original repo?
+<br> I created a fork (let's call it myrepo) of another repository (let's call it orirepo) on GitHub. Later, I cloned orirepo.
+<br> git clone https://github.com/original/orirepo.git
+<br> I modified about 20 files, then I staged my change and made a commit
+<br> git add
+<br> git commit
+<br> However, when I tried to push
+<br> git push
+<br> I got this error:
+<br> remote: Permission to original/orirepo.git denied to mylogin.
+<br> fatal: unable to access 'https://github.com/original/orirepo.git/': The requested URL returned error: 403
+<br> ==> Solution: 
+	  <br> git remote set-url origin http://github.com/myname/reponame 
+<br> and then  git push origin mybranch
+
+============================================================
+<br> **How do I push to GitHub under a different username?
+<br> ==> Solution: 
+	<br> git config --local credential.helper ""
+	<br> git push origin master
+<br> It will prompt for username and password
+<br> git config credential.helper store
