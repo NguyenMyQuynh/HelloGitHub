@@ -70,6 +70,8 @@ or specific branch:
   - remote: Repository not found: 
   ``` Control Panel -> Credential Manager -> Windows credentials -> GitHub account -> Remove. ```
   - Lỗi Permission 403: kiểm tra phiên đăng nhập trên browser có đúng account tương ứng dang thao tác trên máy local không.  
+  - Git fatal: protocol 'https' is not supported because you tried to paste remote url  using `CTRL + V`
+	=> Solution:  update the existing remote: $ git remote set-url origin https://github.com/NguyenMyQuynh/NguyenMyQuynh.git
   
 **How can I push to my fork from a clone of the original repo?
 <br> I created a fork (let's call it myrepo) of another repository (let's call it orirepo) on GitHub. Later, I cloned orirepo.
